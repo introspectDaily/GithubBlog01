@@ -1,154 +1,114 @@
-# [Start Bootstrap - Clean Blog Jekyll](https://startbootstrap.com/themes/clean-blog-jekyll/) - Official Jekyll Version
+# The Hacker-Blog theme
 
-[Clean Blog Jekyll](https://startbootstrap.com/themes/clean-blog-jekyll/) is a stylish, responsive blog theme for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/). This theme features a blog homepage, about page, contact page, and an example post page along with a working contact form powered by [Formspree](https://formspree.io/).
+*Hacker-Blog is a minimalistic, responsive jekyll theme built for hackers. It is based on the [hacker theme](https://github.com/pages-themes/hacker) for project pages.*
 
-This repository holds the official Jekyll version of the Clean Blog theme on Start Bootstrap!
+Demo: [https://ashishchaudhary.in/hacker-blog](https://ashishchaudhary.in/hacker-blog)
 
-## Preview
+### Included
 
-[![Clean Blog (Jekyll) Preview](https://startbootstrap.com/assets/img/screenshots/themes/clean-blog-jekyll.png)](http://StartBootstrap.github.io/startbootstrap-clean-blog-jekyll/)
+1. Pagination
+2. SEO tags
+3. Archive Page
+4. About Page
+5. RSS (`https://base-url/atom`)
+6. Sitemap (`https://base-url/sitemap`)
+7. Google Analytics (optional)
 
-**[View Live Preview](http://StartBootstrap.github.io/startbootstrap-clean-blog-jekyll/)**
+## Usage
 
-## Installation & Setup
+1. Fork and Clone this repository
+2. Customize your blog
+3. Add a new post in `_posts/` directory with proper name format (as shown in placeholder posts)
+4. Commit and push to master on a repository named `<githubusername.github.io>`.
+5. Visit `<githubusername>.github.io`
 
-### Using RubyGems
+## Local Build
 
-When installing the theme using RubyGems, demo images, posts, and pages are not included. Follow the instructions below for complete setup.
+If you want to see the changes before pushing the blog to Github, do a local build.
 
-1. (Optional) Create a new Jekyll site: `jekyll new my-site`
-2. Replace the current theme in your `Gemfile` with `gem "jekyll-theme-clean-blog"`.
-3. Install the theme (run the command inside your site directory): `bundle install`
-4. Replace the current theme in your `_config.yml` file with `theme: jekyll-theme-clean-blog`.
-5. Build your site: `bundle exec jekyll serve`
+1. [`gem install jekyll`](https://jekyllrb.com/docs/installation/#install-with-rubygems)
+2. `gem install jekyll-seo-tag`
+3. `gem install jekyll-paginate`
+4. `gem install jekyll-sitemap`
+5. (`cd` to the blog directory, then:) `jekyll serve --watch --port 8000`
+6. Go to `http://0.0.0.0:8000/` in your web browser.
 
-Assuming there are no errors and the site is building properly, follow these steps next:
+*Note: In case you have set a `baseurl` different than `/` in `_config.yml`, go to `http://0.0.0.0:8000/BASEURL/` instead.*
 
-1. Create the following pages if they do not exist already (or change the extension of existing markdown files from `.md` to `.html`):
+### Local build using docker
 
-   * `index.html` - set to `layout: home`
-   * `about.html` - set to `layout: page`
-   * `contact.html` - set to `layout: page`
-   * `posts/index.html` - set to `layout: page` (you will also need to create a `posts` directory)
+```bash
+docker run --rm -p 8000:8000 \
+  --volume="LOCATION_OF_YOUR_JEKYLL_BLOG:/srv/jekyll" \
+  -it tocttou/jekyll:3.5 \
+  jekyll serve --watch --port 8000
+```
 
-2. Configure the `index.html` front matter. Example:
+Replace `LOCATION_OF_YOUR_JEKYLL_BLOG` with the full path of your blog repository. Visit `http://localhost:8000/` to access the blog.
 
-    ```markdown
-    ---
-    layout: home
-    background: '/PATH_TO_IMAGE'
-    ---
-    ```
+*Note: In case you have set a `baseurl` different than `/` in `_config.yml`, go to `http://0.0.0.0:8000/BASEURL/` instead.*
 
-3. Configure the `about.html`, `contact.html`, and `posts/index.html` front matter. Example:
+## Customizing
 
-    ```markdown
-    ---
-    layout: page
-    title: Page Title
-    description: This is the page description.
-    background: '/PATH_TO_IMAGE'
-    ---
-    ```
+### Configuration variables
 
-4. For each post in the `_posts` directory, update the front matter. Example:
+Edit the `_config.yml` file and set the following variables:
 
-    ```markdown
-    ---
-    layout: post
-    title: "Post Title"
-    subtitle: "This is the post subtitle."
-    date: YYYY-MM-DD HH:MM:SS
-    background: '/PATH_TO_IMAGE'
-    ---
-    ```
+```yml
+title: [The title of your blog]
+description: [A short description of your blog's purpose]
+author:
+  name: [Your name]
+  email: [Your email address]
+  url: [URL of your website]
 
-    For reference, look at the [demo repository](https://github.com/StartBootstrap/startbootstrap-clean-blog-jekyll) to see how the files are set up.
+baseurl: [The base url for this blog.]
 
-5. Add the form to the `contact.html` page. Add the following code to your `contact.html` page:
+paginate: [Number of posts in one paginated section (default: 3)]
+owner: [Your name]
+year: [Current Year]
+```
 
-    ```html
-    <form name="sentMessage" id="contactForm" novalidate>
-      <div class="control-group">
-        <div class="form-group floating-label-form-group controls">
-          <label>Name</label>
-          <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
-          <p class="help-block text-danger"></p>
-        </div>
-      </div>
-      <div class="control-group">
-        <div class="form-group floating-label-form-group controls">
-          <label>Email Address</label>
-          <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
-          <p class="help-block text-danger"></p>
-        </div>
-      </div>
-      <div class="control-group">
-        <div class="form-group col-xs-12 floating-label-form-group controls">
-          <label>Phone Number</label>
-          <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
-          <p class="help-block text-danger"></p>
-        </div>
-      </div>
-      <div class="control-group">
-        <div class="form-group floating-label-form-group controls">
-          <label>Message</label>
-          <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
-          <p class="help-block text-danger"></p>
-        </div>
-      </div>
-      <br>
-      <div id="success"></div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
-      </div>
-    </form>
-    ```
+*Note: All links in the site are prepended with `baseurl`. Default `baseurl` is `/`. Any other baseurl can be setup like `baseurl: /hacker-blog`, which makes the site available at `http://domain.name/hacker-blog`.*
 
-    Make sure you have the `email` setting in your `_config.yml` file set to a working email address! Once this is set, fill out the form and then check your email, verify the email address using the link sent to you by Formspree, and then the form will be working!
+Additionally, you may choose to set the following optional variables:
 
-6. Build your site: `bundle exec jekyll serve`
+```yml
+google_analytics: [Your Google Analytics tracking ID]
+```
 
-### Using Core Files
+### About Page
 
-When using the core files, the demo images, posts, and pages are all included with the download. After following the instructions below, you can then go and change the content of the pages and posts.
+Edit `about.md`
 
-1. [Download](https://github.com/StartBootstrap/startbootstrap-clean-blog-jekyll/archive/master.zip) or Clone the repository.
-2. Update the following configuration settings in your `_config.yml` file:
+### Layout
 
-    * `baseurl`
-    * `url`
-    * `title`
-    * `email` (after setting this setting to a working email address, fill out the form on the contact page and send it - then check your email and verify the address and the form will send you messages when used)
-    * `description`
-    * `author`
-    * `twitter_username` (Optional)
-    * `facebook_username` (Optional)
-    * `github_username` (Optional)
-    * `linkedin_username` (Optional)
-    * `instagram_username` (Optional)
+If you would like to modify the site style:
 
-3. Build your site: `bundle exec jekyll serve`
+**HTML**
 
-## Bugs and Issues
+Footer: Edit `_includes/footer.html`
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/StartBootstrap/startbootstrap-clean-blog-jekyll/issues) here on GitHub!
+Header: Edit `_includes/header.html`
 
-## About
+Links in the header: Edit `_includes/links.html`
 
-Start Bootstrap is an open source library of free Bootstrap templates and themes. All of the free templates and themes on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
+Meta tags, blog title display, and additional CSS: Edit `_includes/head.html`
 
-* <https://startbootstrap.com>
-* <https://twitter.com/SBootstrap>
+Index page layout: Edit `_layouts/default.html`
 
-Start Bootstrap was created by and is maintained by **[David Miller](http://davidmiller.io/)**.
+Post layout: Edit `_layouts/post.html`
 
-* <http://davidmiller.io>
-* <https://twitter.com/davidmillerhere>
-* <https://github.com/davidtmiller>
+**CSS**
 
-Start Bootstrap is based on the [Bootstrap](https://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+Site wide CSS: Edit `_sass/base.scss`
 
-## Copyright and License
+Custom CSS: Make `_sass/custom.scss` and use it. Then add `@import "custom";` to `css/main.scss`
 
-Copyright 2013-2021 Start Bootstrap LLC. Code released under the [MIT](https://github.com/StartBootstrap/startbootstrap-clean-blog-jekyll/blob/master/LICENSE) license.
+**404 page**
+
+Edit `404.md`
+
+## License
+
+CC0 1.0 Universal
