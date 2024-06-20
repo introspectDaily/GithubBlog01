@@ -1,8 +1,30 @@
 ---
 title: Welcome to my blog
 ---
-
 Hello. This is a learning process for how to use github page.
+
+
+# Github Page Learning
+
+## Config
+
+**Theme**
+
+* [Architect](https://github.com/pages-themes/architect)
+* [Cayman](https://github.com/pages-themes/cayman)
+* [Dinky](https://github.com/pages-themes/dinky)
+* [Hacker](https://github.com/pages-themes/hacker)
+* [Leap day](https://github.com/pages-themes/leap-day)
+* [Merlot](https://github.com/pages-themes/merlot)
+* [Midnight](https://github.com/pages-themes/midnight)
+* [Minima](https://github.com/jekyll/minima)
+* [Minimal](https://github.com/pages-themes/minimal)
+* [Modernist](https://github.com/pages-themes/modernist)
+* [Slate](https://github.com/pages-themes/slate)
+* [Tactile](https://github.com/pages-themes/tactile)
+* [Time machine](https://github.com/pages-themes/time-machine)
+
+
 
 ## STL
 
@@ -14,7 +36,6 @@ Hello. This is a learning process for how to use github page.
 STL提供了六大组件，彼此之间可以组合套用，这六大组件分别是：容器、算法、迭代器、仿函数、适配器（配接器）、空间配置器。
 
 - 容器：各种数据结构，如vector、list、queue、set、map等，用来存放数据，从实现角度看，STL容器是一种class template。
-
 - 算法：各种常用的算法，如sort、find、copy、for_each。从实现角度来看，STL算法是一种 function template。
 - 迭代器：扮演了容器与算法之间的胶合剂，共有五种类型，从实现角度来看，迭代器是一种将operator* , operator-> , operator++,operator–等指针相关操作予以重载的class template. 所有STL容器都附带有自己专属的迭代器，只有容器的设计者才知道如何遍历自己的元素。原生指针(native pointer)也是一种迭代器。
 - 仿函数：行为类似函数，可作为算法的某种策略。从实现角度来看，仿函数是一种重载了operator()的class 或者class template。
@@ -23,15 +44,13 @@ STL提供了六大组件，彼此之间可以组合套用，这六大组件分�
 
 STL六大组件的交互关系：
 
-​	容器通过空间配置器取得数据存储空间，
+    容器通过空间配置器取得数据存储空间，
 
-​	算法通过迭代器存储容器中的内容，
+    算法通过迭代器存储容器中的内容，
 
-​	仿函数可以协助算法完成不同的策略的变化，
+    仿函数可以协助算法完成不同的策略的变化，
 
-​	适配器可以修饰仿函数。
-
-
+    适配器可以修饰仿函数。
 
 **常用容器概述**
 
@@ -70,10 +89,6 @@ capacity();				// 容器的容量
 reserve(int len);		// 容器预留len个元素长度，预留位置不初始化，元素不可访问
 ```
 
-
-
-
-
 ### 二分查找
 
 #### binary_search
@@ -105,10 +120,6 @@ void test()
 }
 ```
 
-
-
-
-
 #### lower_bound二分查找下界
 
 > 在对元素类型为T的从小到大排好序的基本类型的数组中进行查找
@@ -116,14 +127,10 @@ void test()
 `T * lower_bound(数组名+n1,数组名+n2,值);`
 
 - 返回一个指针 T * p;
+- *p是查找区间里下标最小的, **大于等于** `值`的元素. 如果找不到, p = 数组名+n2.
 
-- *p是查找区间里下标最小的, **大于等于** `值`的元素. 如果找不到, p = 数组名+n2. 
-
-  [更友好的说明]：插入`值`，而不影响有序性的最小位置（下界）
-
+  [更友好的说明]：插入 `值`，而不影响有序性的最小位置（下界）
 - 同样有自定义比较函数的重载.
-
-
 
 #### upper_bound二分查找上界
 
@@ -131,15 +138,9 @@ void test()
 T * upper_bound(数组名+n1, 数组名+n2, 值, 排序规则结构名());
 ```
 
-- *p 是查找区间里下标最小的，**大于**`值`的元素。如果找不到，p指向下标为n2的元素
+- *p 是查找区间里下标最小的，**大于** `值`的元素。如果找不到，p指向下标为n2的元素
 
-  [更友好的说明]：插入`值`，而不影响有序性的最大位置（上界）
-
-
-
-
-
-
+  [更友好的说明]：插入 `值`，而不影响有序性的最大位置（上界）
 
 ### 二叉平衡树
 
@@ -150,16 +151,9 @@ T * upper_bound(数组名+n1, 数组名+n2, 值, 排序规则结构名());
   ```c++
   multiset<T> st;
   ```
-
 - 排序规则：若 a < b，则a排在b前面
-
-- 使用`st.insert`插入元素，`st.find`查找元素， `st.erase`删除元素，复杂度都是`log(n)`
-
+- 使用 `st.insert`插入元素，`st.find`查找元素， `st.erase`删除元素，复杂度都是 `log(n)`
 - 使用multiset和set，需要头文件 `<set>`
-
-  
-
-
 
 **multiset上的迭代器**
 
@@ -168,18 +162,11 @@ T * upper_bound(数组名+n1, 数组名+n2, 值, 排序规则结构名());
   ```
   multiset<T>::iterator p;
   ```
-
 - **基本用法：**p 是迭代器，相当于指针，可用于指向multiset中的元素。访问multiset中的元素要通 过迭代器。
-
 - 与指针的区别：multiset上的迭代器可 ++ ，--， 用 != 和 == 比较，**不可比大小，不可加减整数，不可相减**
-
 - `st.begin()` 返回值类型为 multiset::iterator,  是指向st中的头一个元素的迭代器
-
 - `st.end()` 返回值类型为 multiset::iterator,  是指向st中的最后一个元素后面的迭代器
-
 - 对迭代器 ++ ,其就指向容器中下一个元素，-- 则令其指向上一个元素
-
-
 
 **自定义排序规则的multiset的用法**
 
@@ -192,13 +179,12 @@ T * upper_bound(数组名+n1, 数组名+n2, 值, 排序规则结构名());
       }//返回值为true则说明a必须排在b前面
   };
   ```
-
 - 用法示例：
 
   ```c++
   void multiset_modify_sort_test(){
   	multiset<int, Rule1> st;	// 自定义排序规则
-      
+
       int a[10]={1,14,12,13,7,13,21,19,8,8 };
       for(int i = 0; i < 10; i++)
           st.insert(a[i]);
@@ -209,20 +195,13 @@ T * upper_bound(数组名+n1, 数组名+n2, 值, 排序规则结构名());
   }
   ```
 
-  
-
-
-
-
-
 #### set
 
-- 简要说明：api和`multiset`基本一致
+- 简要说明：api和 `multiset`基本一致
 
 **不同之处：**
 
 - `set`里不能有重复元素，`multiset`可以有
-
 - `set`插入元素可能不成功
 
   ```c++
@@ -265,7 +244,6 @@ T * upper_bound(数组名+n1, 数组名+n2, 值, 排序规则结构名());
       return 0;
   } 
   ```
-
 - **Ex. pair模板说明**
 
   ```c++
@@ -284,8 +262,6 @@ T * upper_bound(数组名+n1, 数组名+n2, 值, 排序规则结构名());
   a.second = 93.93; 
   ```
 
-  
-
 #### multimap
 
 - 声明方式：
@@ -294,7 +270,6 @@ T * upper_bound(数组名+n1, 数组名+n2, 值, 排序规则结构名());
   #include <map>
   multimap<T1, T2> mp;
   ```
-
 - multimap里的元素都是pair形式的，即
 
   ```c++
@@ -303,18 +278,9 @@ T * upper_bound(数组名+n1, 数组名+n2, 值, 排序规则结构名());
       T2 second;		// 值
   };
   ```
-
-- multimap中的元素按照`first`排序，并可以按`first`进行查找 
-
+- multimap中的元素按照 `first`排序，并可以按 `first`进行查找
 - 缺省的排序规则是 `a.first < b.first` 为true,则a排在b前面
-
-- 插入 (mp.insert) 时使用`make_pair(T1变量,T2变量)`更加方便
-
-
-
-
-
-
+- 插入 (mp.insert) 时使用 `make_pair(T1变量,T2变量)`更加方便
 
 #### map
 
@@ -322,7 +288,5 @@ T * upper_bound(数组名+n1, 数组名+n2, 值, 排序规则结构名());
 
 - 不能有关键字重复的元素
 - 可以使用 [] ，下标为关键字，返回值为first和关键字相同的元素的second。而multimap要使用迭代器
-
 - 插入元素可能失败
-
 - 不存在的键使用[]，返回0
