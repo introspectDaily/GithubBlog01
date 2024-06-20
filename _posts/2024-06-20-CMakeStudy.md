@@ -1,7 +1,3 @@
----
-title: CMake Study
-published: true
----
 # makefile笔记
 
 ## 关键字
@@ -14,6 +10,7 @@ published: true
    define two-lines
    echo foo
    echo $(bar)
+   endif
    ```
 
    如果将变量“two-lines”作为命令包执行时，其相当于：`two-lines = echo foo; echo $(bar) `
@@ -30,7 +27,7 @@ published: true
    override define two-lines 
    foo 
    $(bar) 
-   endef 
+   endif 
    ```
 
    ​	
