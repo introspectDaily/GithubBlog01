@@ -1,5 +1,7 @@
 # makefile笔记
 
+[TOC]
+
 ## 关键字
 
 ### define
