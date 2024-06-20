@@ -8,8 +8,7 @@ group :test do
   gem "html-proofer", "~> 5.0"
 end
 
-gem "webrick", "~> 1.8"
-
 gem "tzinfo", "~> 2.0"
-
 gem "tzinfo-data", "~> 1.2024"
+
+gem "wdm", "~> 0.1.1"
