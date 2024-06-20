@@ -1,32 +1,25 @@
-title: Hacker-Blog
-description: "A Jekyll Blog Theme For Hackers"
-author:
-  name: "SomeHacker"
-  email: "someone@somewebsite.somedomain"
-  url: "https://ashishchaudhary.in/hacker-blog"
+title:              Clean Blog
+email:              your-email@example.com
+description:        A Blog Theme by Start Bootstrap
+author:             Start Bootstrap
+baseurl:            "/startbootstrap-clean-blog-jekyll"
+url:                "https://startbootstrap.github.io"
 
-baseurl: /
+# Social Profiles
+twitter_username:   SBootstrap
+github_username:    StartBootstrap
+facebook_username:  StartBootstrap
+instagram_username:  
+linkedin_username:
 
-source: .
-destination: ./_site
-permalink: /:title
-paginate: 3
-paginate_path: /page/:num/
+# Add your google-analytics ID here to activate google analytics
+google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
 
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-
-future: true
+# Build settings
+markdown:           kramdown
+paginate:           5
+paginate_path:      "/posts/page:num/"
 plugins:
-  - jekyll-seo-tag
+  - jekyll-feed
   - jekyll-paginate
-  - jekyll-sitemap
-
-# Custom variables
-owner : "SomeHacker"
-year : "2020"
+  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
