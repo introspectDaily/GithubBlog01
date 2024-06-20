@@ -1,93 +1,41 @@
 ---
 layout: default
 ---
-
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <header class="post-header">
-
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      {%- assign date_format = site.date_format | default: "%b %-d, %Y" -%}
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {{ page.date | date: date_format }}
-      </time>
-      {%- if page.last_modified_at -%}
-        ~ 
-        {%- assign mdate = page.last_modified_at | date_to_xmlschema -%}
-        <time class="dt-modified" datetime="{{ mdate }}" itemprop="dateModified">
-          {{ mdate | date: date_format }}
-        </time>
-      {%- endif -%}
-      {%- if page.author -%}
-        • {% for author in page.author %}
-          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
-            {%- if forloop.last == false %}, {% endif -%}
-        {% endfor %}
-      {%- endif -%}
-    </p>
-
-  </header>
-
-  <div class="post-content e-content" itemprop="articleBody">
-    {{ content }}
+<div class="row">
+  <div id="myArticle" class="col-sm-9">
+    <div class="post-area post">
+      <header>
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+      </header>
+      <hr>
+      <article>
+        {{content}}
+      </article>
+      <hr>
+        <div class="bdsharebuttonbox">
+            <a href="#" class="bds_more" data-cmd="more"></a>
+            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+            <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+            <a href="#" class="bds_fbook" data-cmd="fbook" title="Share to Facebook"></a>
+            <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+        </div>
+        <script>
+            window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    </div>
+	{% include comments.html %}
   </div>
-
-  <footer class="post-footer">
-    {% if page.categories.size > 0 %}
-      <div class="post-meta">
-        <i class="fas fa-folder"></i>
-        <ul class="post-taxonomies post-categories">
-          {% assign categories = page.categories | sort %}
-          {% for category in categories %}
-            <li class="post-category">
-              {% assign slugified_category = category | slugify %}
-              <a href="{{ '/categories/#:category' | replace: ':category', slugified_category | relative_url }}">{{ category }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    {% endif %}
-
-    {% if page.tags.size > 0 %}
-      <div class="post-meta">
-        <i class="fas fa-tags"></i>
-        <ul class="post-taxonomies post-tags">
-          {% assign tags = page.tags | sort %}
-          {% for tag in tags %}
-            <li class="post-tag">
-              {% assign slugified_tag = tag | slugify %}
-              <a href="{{ '/tags/#:tag' | replace: ':tag', slugified_tag | relative_url }}">{{ slugified_tag }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    {% endif %}
-
-    <nav class="post-pagination" role="navigation">
-      {% if page.previous %}
-        <a class="post-previous" href="{{ page.previous.url | relative_url }}">
-          <h4 class="post-pagination-label">Prev</h4>
-          <span class="post-pagination-title">
-            <i class="fas fa-arrow-left"></i> {{ page.previous.title | markdownify | strip_html }}
-          </span>
-        </a>
-      {% endif %}
-
-      {% if page.next %}
-        <a class="post-next" href="{{ page.next.url | relative_url }}">
-          <h4 class="post-pagination-label">Next</h4>
-          <span class="post-pagination-title">
-            {{ page.next.title | markdownify | strip_html }} <i class="fas fa-arrow-right"></i>
-          </span>
-        </a>
-      {% endif %}
-    </nav>
-  </footer>
-
-  {% if page.comments != false and jekyll.environment == "production" and site.disqus %}
-    {% include disqus.html %}
-  {% endif %}
   
-</article>
+  <div id="content" class="col-sm-3">
+    <!-- <div id="myAffix" class="shadow-bottom-center hidden-xs" data-spy="affix" data-offset-top="0" data-offset-bottom="-20"> -->
+    <div id="myAffix" class="shadow-bottom-center hidden-xs" >
+      <div class="categories-list-header">
+        Content
+      </div>
+      <div class="content-text"></div>
+    </div>
+  </div>
+  
+</div>
