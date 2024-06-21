@@ -6,21 +6,21 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: HyG
-brief-intro: Front-end Dev Engineer
+title: introspectDaily
+brief-intro: Embedded Engineer & NLP Engineer
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://github.com/introspectDaily/GithubBlog01" # the base hostname & protocol for your site
+url: "https://introspectdaily.github.io/" # the base hostname & protocol for your site
 
 permalink: /:year/:month/:day/:title/
 
 # other links
-twitter_username:
-facebook_username: gaohaoyang.water
-github_username:  Gaohaoyang
-email: gaohaoyang126@126.com
-weibo_username: 3115521wh
-zhihu_username: gaohaoyang
-linkedIn_username: gaohaoyang
+twitter_username: none
+facebook_username: none
+github_username:  introspectDaily
+email: 1795973398@qq.com
+weibo_username: none
+zhihu_username: none
+linkedIn_username: none
 dribbble_username:
 
 description_footer: 本站记录我前端之旅的沿途风景！
@@ -29,14 +29,14 @@ description_footer: 本站记录我前端之旅的沿途风景！
 # two ways to comment, only choose one, and use your own short name
 # 两种评论插件，选一个就好了，使用自己的 short_name
 duoshuo_shortname: #hygblog
-disqus_shortname: gaohaoyang
+disqus_shortname: ID
 
 # statistic analysis 统计代码
 # 百度统计 id，将统计代码替换为自己的百度统计id，即
 # hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
 # xxxxx字符串
-baidu_tongji_id: cf8506e0ef223e57ff6239944e5d46a4
-google_analytics_id: UA-72449510-4 # google 分析追踪id
+baidu_tongji_id: 1186a6a5d9f49a9421f2ef22794f8bb0
+google_analytics_id: G-2H2YE9XG4J # google 分析追踪id
 
 # Build settings
 markdown: kramdown
