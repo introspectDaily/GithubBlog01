@@ -12,6 +12,7 @@
    * 内容JSON
    */
   var demoContent = [
+    /*
     {
       demo_link: 'https://gaohaoyang.github.io/pics/animation/reactNativeAnimation.html',
       img_link: 'https://cdn.jsdelivr.net/gh/Gaohaoyang/pics/pics/demos/animationInReactNative.png',
@@ -197,6 +198,7 @@
       core_tech: 'HTML BootStrap',
       description: '使用BootStrap仿照知乎做了一个静态页面。',
     },
+    */
   ]
 
   contentInit(demoContent) //内容初始化
