@@ -14,7 +14,8 @@ $blockquote-border: $dove-grey !default;
 body {
   margin: 0;
   padding: 0;
-  background: $body-background url("../assets/bkg.png") 0 0;
+  // background: $body-background url("../assets/bkg.png") 0 0;
+  background: #000 url("../assets/bkg.png") 0 0;
   color: $body-foreground;
   font-size: 16px;
   line-height: 1.5;
@@ -51,7 +52,8 @@ li {
 
 header {
   background: rgba(0, 0, 0, 0.1);
-  border-bottom: 1px dashed $conifer; //header;
+  // border-bottom: 1px dashed $conifer; //header;
+  border-bottom: 1px dashed #000; //header;
   padding: 20px;
   margin: 0 0 40px 0;
 }

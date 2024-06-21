@@ -1,4 +1,6 @@
+@import "default_colors";
 header {
+    // border-bottom: 1px dashed #000;
     background: #222;
     height: 52px;
     color: #9d9d9d;
@@ -43,15 +45,15 @@ header {
                         padding: 0 10px;
                         height: 52px;
                         &:hover {
-                            background-color: #000;
+                            background-color: $hacker-background/*#000*/;
                         }
                         i {
                             margin-right: 5px;
                         }
                     }
                     >.active {
-                        color: #fff;
-                        background-color: #000;
+                        color: #d494dd/*#fff*/;
+                        background-color: $hacker-background/*#000*/;
                         box-shadow: 0 25px 25px -15px rgba(255,255,255,0.93);
                     }
                 }
@@ -124,7 +126,7 @@ header {
                 transition: 0.4s ease;
             }
             >.active{
-                background: #000;
+                background: $hacker-background/*#000*/;
                 color: #fff;
             }
             .nav-show{
@@ -163,7 +165,7 @@ header {
                         }
                         >.active {
                             color: #fff;
-                            background-color: #000;
+                            background-color: $hacker-background/*#000*/;
                             box-shadow: none;
                         }
                     }

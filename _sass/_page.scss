@@ -68,19 +68,19 @@
                 }
                 .pageTag {
                     i {
-                        color: #c6cbe9;
+                        color: #b376ce8c/*c6cbe9*/;
                     }
                     a {
 
                         // border: 1px solid #aaa;
                         padding: 0 5px;
-                        background-color: #c6cbe9;
+                        background-color: #b376ce8c/*c6cbe9*/;
                         border-radius: 4px;
                         color: #fff;
                         font-size: 90%;
                         transition: 0.3s ease;
                         &:hover {
-                            background-color: #c0ddc7;
+                            background-color: #b376ce8c/*c0ddc7*/;
                         }
                     }
                 }
